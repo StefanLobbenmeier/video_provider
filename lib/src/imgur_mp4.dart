@@ -1,6 +1,7 @@
 
 
-String imgur_to_mp4(String gifv_url) {
-  assert (gifv_url.endsWith(".gifv"));
-  return gifv_url.replaceRange(gifv_url.length - "gifv".length, gifv_url.length, "mp4");
+Uri imgur_to_mp4(Uri gifv_url) {
+  assert (gifv_url.path.endsWith(".gifv"));
+  String newPath = gifv_url.path.replaceRange(gifv_url.path.lastIndexOf("."), gifv_url.path.length, ".mp4");
+  return gifv_url.replace(path: newPath);
 }
