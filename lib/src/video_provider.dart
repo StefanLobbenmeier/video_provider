@@ -13,7 +13,9 @@ abstract class VideoProvider {
       case "gfycat.com":
         return GfycatProvider(uri);
       default:
-        print("Unknown video provider: $uri, with authority ${uri.authority} and host ${uri.host}");
+        print("Unknown video provider: $uri, "
+            "with authority ${uri.authority} "
+            "and host ${uri.host}");
         return null;
     }
   }

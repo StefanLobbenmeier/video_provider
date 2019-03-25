@@ -1,7 +1,7 @@
 import 'video_provider.dart';
 
 class ImgurProvider extends VideoProvider {
-  ImgurProvider(Uri uri): super(uri);
+  ImgurProvider(Uri uri) : super(uri);
 
   @override
   Uri getMp4Uri() {
