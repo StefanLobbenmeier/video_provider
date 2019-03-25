@@ -1,0 +1,14 @@
+name: video_provider_example
+description: Demonstrates how to use the library video_provider
+# version: 1.0.0
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+
+dependencies:
+  video_provider:
+    git: https://github.com/StefanLobbenmeier/video_provider
+
+dev_dependencies:
+  pedantic: ^1.0.0
+  test: ^1.0.0

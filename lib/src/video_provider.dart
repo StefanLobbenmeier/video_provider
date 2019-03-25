@@ -18,5 +18,5 @@ abstract class VideoProvider {
     }
   }
 
-  getMp4Uri();
+  Uri getMp4Uri();
 }

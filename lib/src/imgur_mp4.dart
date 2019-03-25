@@ -4,7 +4,7 @@ class ImgurProvider extends VideoProvider {
   ImgurProvider(Uri uri): super(uri);
 
   @override
-  getMp4Uri() {
+  Uri getMp4Uri() {
     return imgur_to_mp4(uri);
   }
 }

@@ -1,10 +1,10 @@
 import 'video_provider.dart';
 
 class GfycatProvider extends VideoProvider {
-  GfycatProvider(Uri uri): super(uri);
+  GfycatProvider(Uri uri) : super(uri);
 
   @override
-  getMp4Uri() {
+  Uri getMp4Uri() {
     return gfycat_to_mp4(uri);
   }
 }

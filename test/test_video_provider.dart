@@ -1,6 +1,6 @@
-import 'package:reddit_video_utils/src/imgur_mp4.dart';
-import 'package:reddit_video_utils/src/gfycat_mp4.dart';
-import 'package:reddit_video_utils/src/video_provider.dart';
+import 'package:video_provider/src/imgur_mp4.dart';
+import 'package:video_provider/src/gfycat_mp4.dart';
+import 'package:video_provider/src/video_provider.dart';
 import 'package:test/test.dart';
 
 void main() {

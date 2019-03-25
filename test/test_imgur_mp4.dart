@@ -1,4 +1,4 @@
-import 'package:reddit_video_utils/src/imgur_mp4.dart';
+import 'package:video_provider/src/imgur_mp4.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -1,6 +1,9 @@
-import 'package:reddit_video_utils/video_provider.dart';
+import 'package:video_provider/video_provider.dart';
 
 main() {
-  var awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  Uri mp4Uri = VideoProvider
+      .fromUri(Uri.parse("https://i.imgur.com/example.gifv"))
+      .getMp4Uri();
+
+  print(mp4Uri); // prints https://i.imgur.com/example.mp4
 }

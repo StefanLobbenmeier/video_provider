@@ -1,17 +1,25 @@
-A library for Dart developers.
+# Video Provider
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+This library enables you to extract mp4 videos from various video providers. Currently supported:
+
+- Imgur
+- Gfycat
+
+More will follow, feel free to make pull requests or raise issues with examples.
 
 ## Usage
 
 A simple usage example:
 
 ```dart
-import 'package:reddit_video_utils/reddit_video_utils.dart';
+import 'package:video_provider/video_provider.dart';
 
 main() {
-  var awesome = new Awesome();
+  Uri mp4Uri = VideoProvider
+          .fromUri(Uri.parse("https://i.imgur.com/example.gifv"))
+          .getMp4Uri();
+
+  print(mp4Uri); // prints https://i.imgur.com/example.mp4
 }
 ```
 
@@ -19,4 +27,4 @@ main() {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/StefanLobbenmeier/video_provider/issues
