@@ -1,8 +1,7 @@
 name: video_provider
-description: A starting point for Dart libraries or applications.
+description: This library enables you to extract mp4 videos from various video providers.
 # version: 1.0.0
-# homepage: https://www.example.com
-# author: stefan.lobbenmeier <email@example.com>
+# homepage: https://github.com/StefanLobbenmeier/video_provider
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
