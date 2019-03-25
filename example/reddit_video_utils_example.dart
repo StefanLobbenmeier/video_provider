@@ -1,4 +1,4 @@
-import 'package:reddit_video_utils/reddit_video_utils.dart';
+import 'package:reddit_video_utils/video_provider.dart';
 
 main() {
   var awesome = Awesome();
