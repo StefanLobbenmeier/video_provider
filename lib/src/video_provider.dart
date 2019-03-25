@@ -20,5 +20,9 @@ abstract class VideoProvider {
     }
   }
 
+  static bool supportsVideoProvider(Uri uri) {
+    return VideoProvider.fromUri(uri) != null;
+  }
+
   Uri getMp4Uri();
 }
