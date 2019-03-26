@@ -1,5 +1,5 @@
-import 'imgur_mp4.dart';
-import 'gfycat_mp4.dart';
+import 'imgur.dart';
+import 'gfycat.dart';
 
 abstract class VideoProvider {
   Uri uri;
