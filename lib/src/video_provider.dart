@@ -1,5 +1,6 @@
-import 'package:video_provider/src/concrete_video_providers/imgur.dart';
 import 'package:video_provider/src/concrete_video_providers/gfycat.dart';
+import 'package:video_provider/src/concrete_video_providers/imgur.dart';
+import 'package:video_provider/src/concrete_video_providers/reddit_video.dart';
 
 import 'video.dart';
 
@@ -14,6 +15,8 @@ abstract class VideoProvider {
         return ImgurProvider(uri);
       case "gfycat.com":
         return GfycatProvider(uri);
+      case "v.redd.it.com":
+        return RedditVideoProvider(uri);
       default:
         return null;
     }

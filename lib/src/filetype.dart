@@ -1,1 +1,5 @@
-enum Filetype { mp4 }
+enum Filetype {
+  mpd,
+  mp4,
+  m3u8,
+}

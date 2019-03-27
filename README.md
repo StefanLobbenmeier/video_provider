@@ -4,6 +4,7 @@ This library enables you to extract mp4 videos from various video providers. Cur
 
 - Imgur
 - Gfycat
+- Reddit Videos
 
 You can use VideoProvider offline (producing potentially unavailable videos) or CheckedVideoProvider online (which only returns the videos actually available).
 
