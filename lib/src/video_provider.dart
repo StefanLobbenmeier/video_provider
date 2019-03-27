@@ -1,6 +1,8 @@
 import 'imgur.dart';
 import 'gfycat.dart';
 
+import 'video.dart';
+
 abstract class VideoProvider {
   Uri uri;
 
@@ -24,5 +26,5 @@ abstract class VideoProvider {
     return VideoProvider.fromUri(uri) != null;
   }
 
-  Uri getMp4Uri();
+  List<Video> getVideos();
 }

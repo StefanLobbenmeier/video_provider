@@ -1,11 +1,17 @@
+import 'package:video_provider/src/video.dart';
+import 'package:video_provider/src/resolution.dart';
+import 'package:video_provider/src/filetype.dart';
+
 import 'video_provider.dart';
 
 class ImgurProvider extends VideoProvider {
   ImgurProvider(Uri uri) : super(uri);
 
   @override
-  Uri getMp4Uri() {
-    return imgur_to_mp4(uri);
+  List<Video> getVideos() {
+    return [
+      Video(Resolution.normal, Filetype.mp4, imgur_to_mp4(uri)),
+    ];
   }
 }
 
