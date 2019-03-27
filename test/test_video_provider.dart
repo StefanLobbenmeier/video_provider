@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 void main() {
   test('video_provider_factory', () {
     expect(
-      VideoProvider.fromUri(Uri.parse("https://i.imgur.com/4a3Ch82.mp4")),
+      VideoProvider.fromUri(Uri.parse("https://i.imgur.com/4a3Ch82.gifv")),
       TypeMatcher<ImgurProvider>(),
     );
     expect(
@@ -17,7 +17,7 @@ void main() {
 
   test('video_provider_supportsVideoProvider', () {
     expect(
-      VideoProvider.supportsVideoProvider(Uri.parse("https://i.imgur.com/4a3Ch82.mp4")),
+      VideoProvider.supportsVideoProvider(Uri.parse("https://i.imgur.com/4a3Ch82.gifv")),
       true,
     );
     expect(

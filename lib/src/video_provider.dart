@@ -4,9 +4,9 @@ import 'gfycat.dart';
 import 'video.dart';
 
 abstract class VideoProvider {
-  Uri uri;
+  final Uri uri;
 
-  VideoProvider(this.uri);
+  const VideoProvider(this.uri);
 
   factory VideoProvider.fromUri(Uri uri) {
     switch (uri.host) {
@@ -15,9 +15,6 @@ abstract class VideoProvider {
       case "gfycat.com":
         return GfycatProvider(uri);
       default:
-        print("Unknown video provider: $uri, "
-            "with authority ${uri.authority} "
-            "and host ${uri.host}");
         return null;
     }
   }
