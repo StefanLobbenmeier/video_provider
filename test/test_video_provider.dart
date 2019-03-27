@@ -1,5 +1,5 @@
-import 'package:video_provider/src/imgur.dart';
-import 'package:video_provider/src/gfycat.dart';
+import 'package:video_provider/src/concrete_video_providers/imgur.dart';
+import 'package:video_provider/src/concrete_video_providers/gfycat.dart';
 import 'package:video_provider/src/video_provider.dart';
 import 'package:test/test.dart';
 

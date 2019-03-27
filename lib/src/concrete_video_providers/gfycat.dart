@@ -1,8 +1,8 @@
-import 'package:video_provider/src/video.dart';
 import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/filetype.dart';
+import 'package:video_provider/src/video.dart';
+import 'package:video_provider/src/video_provider.dart';
 
-import 'video_provider.dart';
 
 class GfycatProvider extends VideoProvider {
   GfycatProvider(Uri uri) : super(uri);

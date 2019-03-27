@@ -1,4 +1,4 @@
-import 'package:video_provider/src/gfycat.dart';
+import 'package:video_provider/src/concrete_video_providers/gfycat.dart';
 import 'package:test/test.dart';
 
 void main() {

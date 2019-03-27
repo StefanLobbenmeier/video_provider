@@ -1,8 +1,7 @@
-import 'package:video_provider/src/video.dart';
 import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/filetype.dart';
-
-import 'video_provider.dart';
+import 'package:video_provider/src/video.dart';
+import 'package:video_provider/src/video_provider.dart';
 
 class ImgurProvider extends VideoProvider {
   ImgurProvider(Uri uri) : super(uri);
