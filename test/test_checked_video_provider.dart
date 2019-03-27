@@ -1,7 +1,5 @@
-import 'package:video_provider/src/concrete_video_providers/imgur.dart';
-import 'package:video_provider/src/concrete_video_providers/gfycat.dart';
-import 'package:video_provider/src/checked_video_provider.dart';
 import 'package:test/test.dart';
+import 'package:video_provider/src/checked_video_provider.dart';
 
 void main() {
   test('checked_video_provider_returns_single_imgur_mp4', () async {
