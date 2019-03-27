@@ -1,4 +1,1 @@
-
-enum Filetype {
-  mp4
-}
+enum Filetype { mp4 }

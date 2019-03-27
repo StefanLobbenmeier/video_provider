@@ -1,8 +1,7 @@
-import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/filetype.dart';
+import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/video.dart';
 import 'package:video_provider/src/video_provider.dart';
-
 
 class GfycatProvider extends VideoProvider {
   GfycatProvider(Uri uri) : super(uri);
@@ -22,6 +21,7 @@ Uri gfycat_to_giant_mp4(Uri gfycat_url) {
     gfycat_url.path + ".mp4",
   );
 }
+
 Uri gfycat_to_thumbs_mp4(Uri gfycat_url) {
   return Uri.https(
     gfycat_url.authority.replaceFirst("gfycat", "thumbs.gfycat"),
