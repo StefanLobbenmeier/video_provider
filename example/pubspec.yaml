@@ -6,7 +6,9 @@ environment:
   sdk: '>=2.1.0 <3.0.0'
 
 dependencies:
-  video_provider: '1.1.0'
+  video_provider:
+    git: https://github.com/StefanLobbenmeier/video_provider
+#  '1.1.0'
 
 dev_dependencies:
   pedantic: ^1.0.0

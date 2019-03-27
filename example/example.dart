@@ -1,9 +1,13 @@
+import 'package:video_provider/src/video.dart';
 import 'package:video_provider/video_provider.dart';
 
 main() {
-  Uri mp4Uri = VideoProvider
+  List<Video> potentialUris = VideoProvider
       .fromUri(Uri.parse("https://i.imgur.com/example.gifv"))
-      .getMp4Uri();
+      .getVideos();
 
-  print(mp4Uri); // prints https://i.imgur.com/example.mp4
+  // prints https://i.imgur.com/example.mp4
+  for(var video in potentialUris)
+    print(video.uri);
+
 }
