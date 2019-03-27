@@ -15,7 +15,7 @@ abstract class VideoProvider {
         return ImgurProvider(uri);
       case "gfycat.com":
         return GfycatProvider(uri);
-      case "v.redd.it.com":
+      case "v.redd.it":
         return RedditVideoProvider(uri);
       default:
         return null;

@@ -1,6 +1,7 @@
 import 'package:test/test.dart';
 import 'package:video_provider/src/concrete_video_providers/gfycat.dart';
 import 'package:video_provider/src/concrete_video_providers/imgur.dart';
+import 'package:video_provider/src/concrete_video_providers/reddit_video.dart';
 import 'package:video_provider/src/video_provider.dart';
 
 void main() {
@@ -14,6 +15,11 @@ void main() {
           Uri.parse("https://gfycat.com/ConstantDecimalKarakul")),
       TypeMatcher<GfycatProvider>(),
     );
+    expect(
+      VideoProvider.fromUri(
+          Uri.parse("https://v.redd.it/u1iypazo6ko21")),
+      TypeMatcher<RedditVideoProvider>(),
+    );
   });
 
   test('video_provider_supportsVideoProvider', () {
@@ -25,6 +31,11 @@ void main() {
     expect(
       VideoProvider.supportsVideoProvider(
           Uri.parse("https://gfycat.com/ConstantDecimalKarakul")),
+      true,
+    );
+    expect(
+      VideoProvider.supportsVideoProvider(
+          Uri.parse("https://v.redd.it/u1iypazo6ko21")),
       true,
     );
     expect(
