@@ -1,5 +1,7 @@
 # Video Provider
 
+[![Build Status](https://travis-ci.org/StefanLobbenmeier/video_provider.svg?branch=master)](https://travis-ci.org/StefanLobbenmeier/video_provider) [![Pub Version](https://img.shields.io/pub/v/video_provider.svg)](https://pub.dartlang.org/packages/video_provider)
+
 This library enables you to extract mp4 videos from various video providers. Currently supported:
 
 - Imgur
