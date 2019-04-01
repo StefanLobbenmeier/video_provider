@@ -16,8 +16,7 @@ void main() {
       TypeMatcher<GfycatProvider>(),
     );
     expect(
-      VideoProvider.fromUri(
-          Uri.parse("https://v.redd.it/u1iypazo6ko21")),
+      VideoProvider.fromUri(Uri.parse("https://v.redd.it/u1iypazo6ko21")),
       TypeMatcher<RedditVideoProvider>(),
     );
   });
