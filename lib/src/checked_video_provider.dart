@@ -16,7 +16,7 @@ class CheckedVideoProvider {
 
   Stream<Video> getVideos() async* {
     for (var video in videoProvider.getVideos()) {
-      var response = await http.get(video.uri);
+      var response = await http.head(video.uri);
       if (response.statusCode == 200) yield video;
     }
   }
