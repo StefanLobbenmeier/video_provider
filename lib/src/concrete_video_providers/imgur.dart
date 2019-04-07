@@ -12,6 +12,10 @@ class ImgurProvider extends VideoProvider {
       Video(Resolution.normal, Filetype.mp4, imgur_to_mp4(uri)),
     ];
   }
+
+  static bool supportsUri(Uri uri) {
+    return uri.host == "i.imgur.com";
+  }
 }
 
 Uri imgur_to_mp4(Uri gifv_url) {

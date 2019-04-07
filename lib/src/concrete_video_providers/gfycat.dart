@@ -13,6 +13,10 @@ class GfycatProvider extends VideoProvider {
       Video(Resolution.low, Filetype.mp4, gfycat_to_thumbs_mp4(uri)),
     ];
   }
+
+  static bool supportsUri(Uri uri) {
+    return uri.host == "gfycat.com";
+  }
 }
 
 Uri gfycat_to_giant_mp4(Uri gfycat_url) {
