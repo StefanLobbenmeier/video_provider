@@ -18,16 +18,20 @@ class GfycatProvider extends ApiVideoProvider {
   }
 
   @override
-  Future<List<Video>> getApiVideo() async {
+  Stream<Video> getApiVideo() async* {
     var videoname = uri.path;
     var api = "https://api.gfycat.com/v1/gfycats/$videoname";
 
     var result = await http.get(api);
     Map decodedResult = jsonDecode(result.body)["gfyItem"];
 
-    return [
-      Video(Resolution.high, Filetype.mp4, Uri.parse(decodedResult["mp4Url"]))
-    ];
+    assert (decodedResult != null, result.body);
+
+    yield Video(
+      Resolution.high,
+      Filetype.mp4,
+      Uri.parse(decodedResult["mp4Url"]),
+    );
   }
 }
 

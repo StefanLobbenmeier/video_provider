@@ -21,13 +21,13 @@ void main() {
 
   test('checked_video_provider_returns_only_working_gfycat', () async {
     var imgurList = await CheckedVideoProvider.fromUri(
-            Uri.parse("https://gfycat.com/ScratchyBarrenDeermouse-mobile"))
+            Uri.parse("https://gfycat.com/ScratchyBarrenDeermouse"))
         .getVideos()
         .toList();
     expect(imgurList.length, 1);
     expect(
       imgurList.first.uri,
-      Uri.parse("https://thumbs.gfycat.com/ScratchyBarrenDeermouse-mobile.mp4"),
+      Uri.parse("https://zippy.gfycat.com/ScratchyBarrenDeermouse.mp4"),
     );
   });
 }
