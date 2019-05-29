@@ -10,16 +10,10 @@ abstract class VideoProvider {
   const VideoProvider(this.uri);
 
   factory VideoProvider.fromUri(Uri uri) {
-    switch (uri.host) {
-      case "i.imgur.com":
-        return ImgurProvider(uri);
-      case "gfycat.com":
-        return GfycatProvider(uri);
-      case "v.redd.it":
-        return RedditVideoProvider(uri);
-      default:
-        return null;
-    }
+    if (ImgurProvider.supportsUri(uri)) return ImgurProvider(uri);
+    if (GfycatProvider.supportsUri(uri)) return GfycatProvider(uri);
+    if (RedditVideoProvider.supportsUri(uri)) return RedditVideoProvider(uri);
+    return null;
   }
 
   static bool supportsVideoProvider(Uri uri) {

@@ -1,5 +1,5 @@
-import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/filetype.dart';
+import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/video.dart';
 import 'package:video_provider/src/video_provider.dart';
 
@@ -11,6 +11,13 @@ class ImgurProvider extends VideoProvider {
     return [
       Video(Resolution.normal, Filetype.mp4, imgur_to_mp4(uri)),
     ];
+  }
+
+  static bool supportsUri(Uri uri) {
+    return uri.host == "i.imgur.com" &&
+        (uri.path.endsWith("gifv") ||
+            uri.path.endsWith("gif") ||
+            uri.path.endsWith("mp4"));
   }
 }
 

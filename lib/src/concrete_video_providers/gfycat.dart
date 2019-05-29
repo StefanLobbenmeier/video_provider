@@ -20,6 +20,10 @@ class GfycatProvider extends ApiVideoProvider {
     ];
   }
 
+  static bool supportsUri(Uri uri) {
+    return uri.host == "gfycat.com";
+  }
+
   @override
   Stream<Video> getApiVideo() async* {
     var videoname = getVideoName();

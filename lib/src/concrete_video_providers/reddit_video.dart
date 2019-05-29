@@ -13,6 +13,10 @@ class RedditVideoProvider extends VideoProvider {
       Video(Resolution.normal, Filetype.mpd, reddit_to_mpd(uri)),
     ];
   }
+
+  static bool supportsUri(Uri uri) {
+    return uri.host == "v.redd.it";
+  }
 }
 
 Uri reddit_to_m3u8(Uri reddit_uri) {
