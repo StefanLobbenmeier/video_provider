@@ -1,9 +1,12 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:video_provider/src/api_video_provider.dart';
 import 'package:video_provider/src/filetype.dart';
 import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/video.dart';
-import 'package:video_provider/src/video_provider.dart';
 
-class GfycatProvider extends VideoProvider {
+class GfycatProvider extends ApiVideoProvider {
   GfycatProvider(Uri uri) : super(uri);
 
   @override
@@ -11,6 +14,19 @@ class GfycatProvider extends VideoProvider {
     return [
       Video(Resolution.high, Filetype.mp4, gfycat_to_giant_mp4(uri)),
       Video(Resolution.low, Filetype.mp4, gfycat_to_thumbs_mp4(uri)),
+    ];
+  }
+
+  @override
+  Future<List<Video>> getApiVideo() async {
+    var videoname = uri.path;
+    var api = "https://api.gfycat.com/v1/gfycats/$videoname";
+
+    var result = await http.get(api);
+    Map decodedResult = jsonDecode(result.body)["gfyItem"];
+
+    return [
+      Video(Resolution.high, Filetype.mp4, Uri.parse(decodedResult["mp4Url"]))
     ];
   }
 }

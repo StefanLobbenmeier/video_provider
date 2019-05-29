@@ -4,7 +4,6 @@ import 'resolution.dart';
 class Video {
   Resolution resolution;
   Filetype filetype;
-
   Uri uri;
 
   Video(
