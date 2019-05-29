@@ -7,6 +7,9 @@ import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/video.dart';
 
 class GfycatProvider extends ApiVideoProvider {
+  static final RegExp videoNameParser =
+      new RegExp("[A-Z]?[a-z]*[A-Z]?[a-z]*[A-Z]?[a-z]*");
+
   GfycatProvider(Uri uri) : super(uri);
 
   @override
@@ -19,19 +22,23 @@ class GfycatProvider extends ApiVideoProvider {
 
   @override
   Stream<Video> getApiVideo() async* {
-    var videoname = uri.path;
+    var videoname = getVideoName();
     var api = "https://api.gfycat.com/v1/gfycats/$videoname";
 
     var result = await http.get(api);
     Map decodedResult = jsonDecode(result.body)["gfyItem"];
 
-    assert (decodedResult != null, result.body);
+    assert(decodedResult != null, result.body);
 
     yield Video(
       Resolution.high,
       Filetype.mp4,
       Uri.parse(decodedResult["mp4Url"]),
     );
+  }
+
+  String getVideoName() {
+    return videoNameParser.firstMatch(uri.path).group(0);
   }
 }
 

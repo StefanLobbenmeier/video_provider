@@ -21,7 +21,7 @@ void main() {
 
   test('checked_video_provider_returns_only_working_gfycat', () async {
     var imgurList = await CheckedVideoProvider.fromUri(
-            Uri.parse("https://gfycat.com/ScratchyBarrenDeermouse"))
+            Uri.parse("https://gfycat.com/ScratchyBarrenDeermouse-mobile"))
         .getVideos()
         .toList();
     expect(imgurList.length, 1);

@@ -23,4 +23,19 @@ void main() {
       [new Video(Resolution.high, Filetype.mp4, Uri.parse("https://giant.gfycat.com/ConstantDecimalKarakul.mp4"))],
     );
   });
+
+  test('gfycat_regex', () {
+    expect(
+      GfycatProvider.videoNameParser.firstMatch("ConstantDecimalKarakul").group(0),
+      "ConstantDecimalKarakul",
+    );
+    expect(
+      GfycatProvider.videoNameParser.firstMatch("ConstantDecimalKarakul-mobile").group(0),
+      "ConstantDecimalKarakul",
+    );
+    expect(
+      GfycatProvider.videoNameParser.firstMatch("constantdecimalkarakul-mobile").group(0),
+      "constantdecimalkarakul",
+    );
+  });
 }
