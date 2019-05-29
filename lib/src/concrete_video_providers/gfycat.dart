@@ -8,7 +8,7 @@ import 'package:video_provider/src/video.dart';
 
 class GfycatProvider extends ApiVideoProvider {
   static final RegExp videoNameParser =
-      new RegExp("[A-Z]?[a-z]*[A-Z]?[a-z]*[A-Z]?[a-z]*");
+      new RegExp("[a-z]+", caseSensitive: false);
 
   GfycatProvider(Uri uri) : super(uri);
 
@@ -32,7 +32,11 @@ class GfycatProvider extends ApiVideoProvider {
     var result = await http.get(api);
     Map decodedResult = jsonDecode(result.body)["gfyItem"];
 
+    print(result.body);
+
     assert(decodedResult != null, result.body);
+
+    print(decodedResult);
 
     yield Video(
       Resolution.high,
