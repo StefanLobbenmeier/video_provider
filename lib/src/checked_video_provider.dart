@@ -16,7 +16,7 @@ class CheckedVideoProvider {
   }
 
   Stream<Video> getVideos() {
-    if(videoProvider is ApiVideoProvider) {
+    if (videoProvider is ApiVideoProvider) {
       return (videoProvider as ApiVideoProvider).getApiVideo();
     } else {
       return getSucessfullyResolvedVideos();

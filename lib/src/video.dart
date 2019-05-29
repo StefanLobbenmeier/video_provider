@@ -20,15 +20,12 @@ class Video {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Video &&
-              runtimeType == other.runtimeType &&
-              resolution == other.resolution &&
-              filetype == other.filetype &&
-              uri == other.uri;
+      other is Video &&
+          runtimeType == other.runtimeType &&
+          resolution == other.resolution &&
+          filetype == other.filetype &&
+          uri == other.uri;
 
   @override
-  int get hashCode =>
-      resolution.hashCode ^
-      filetype.hashCode ^
-      uri.hashCode;
+  int get hashCode => resolution.hashCode ^ filetype.hashCode ^ uri.hashCode;
 }

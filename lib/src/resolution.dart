@@ -15,9 +15,9 @@ class Resolution {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Resolution &&
-              runtimeType == other.runtimeType &&
-              level == other.level;
+      other is Resolution &&
+          runtimeType == other.runtimeType &&
+          level == other.level;
 
   @override
   int get hashCode => level.hashCode;
