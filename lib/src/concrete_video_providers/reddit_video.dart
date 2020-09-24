@@ -35,5 +35,6 @@ Uri reddit_to_mpd(Uri reddit_uri) {
 Uri reddit_to_mp4(Uri reddit_uri) {
   if (reddit_uri.path.endsWith('.mp4')) {
     return reddit_uri;
-  } return null;
+  }
+  return null;
 }

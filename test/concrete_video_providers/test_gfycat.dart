@@ -18,11 +18,14 @@ void main() {
 
   test('gfycat_mp4_api', () async {
     expect(
-      await GfycatProvider(Uri.parse('https://gfycat.com/ConstantDecimalKarakul'))
+      await GfycatProvider(
+              Uri.parse('https://gfycat.com/ConstantDecimalKarakul'))
           .getApiVideo()
           .toList(),
-      [Video(Resolution.high, Filetype.mp4,
-          Uri.parse('https://giant.gfycat.com/ConstantDecimalKarakul.mp4'))],
+      [
+        Video(Resolution.high, Filetype.mp4,
+            Uri.parse('https://giant.gfycat.com/ConstantDecimalKarakul.mp4'))
+      ],
     );
   });
 
