@@ -1,7 +1,6 @@
 name: video_provider
 description: This library enables you to extract mp4 videos from various video providers.
-version: 1.2.3+1
-author: StefanLobbenmeier <Stefan.Lobbenmeier@gmail.com>
+version: 1.2.3+2
 homepage: https://github.com/StefanLobbenmeier/video_provider
 license: GPL-3.0-or-later
 
