@@ -7,8 +7,7 @@ import 'package:video_provider/src/resolution.dart';
 import 'package:video_provider/src/video.dart';
 
 class GfycatProvider extends ApiVideoProvider {
-  static final RegExp videoNameParser =
-      new RegExp('[a-z]+', caseSensitive: false);
+  static final videoNameParser = RegExp('[a-z]+', caseSensitive: false);
 
   GfycatProvider(Uri uri) : super(uri);
 

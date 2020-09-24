@@ -22,7 +22,7 @@ class ImgurProvider extends VideoProvider {
 }
 
 Uri imgur_to_mp4(Uri gifv_url) {
-  String newPath = gifv_url.path.replaceRange(
+  var newPath = gifv_url.path.replaceRange(
       gifv_url.path.lastIndexOf('.'), gifv_url.path.length, '.mp4');
   return gifv_url.replace(path: newPath);
 }
