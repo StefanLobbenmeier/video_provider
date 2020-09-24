@@ -11,22 +11,29 @@ class RedditVideoProvider extends VideoProvider {
     return [
       Video(Resolution.normal, Filetype.m3u8, reddit_to_m3u8(uri)),
       Video(Resolution.normal, Filetype.mpd, reddit_to_mpd(uri)),
+      Video(Resolution.normal, Filetype.mp4, reddit_to_mp4(uri)),
     ];
   }
 
   static bool supportsUri(Uri uri) {
-    return uri.host == "v.redd.it";
+    return uri.host == 'v.redd.it';
   }
 }
 
 Uri reddit_to_m3u8(Uri reddit_uri) {
   var newPathSegements = List.of(reddit_uri.pathSegments);
-  newPathSegements.add("HLSPlaylist.m3u8");
+  newPathSegements.add('HLSPlaylist.m3u8');
   return reddit_uri.replace(pathSegments: newPathSegements);
 }
 
 Uri reddit_to_mpd(Uri reddit_uri) {
   var newPathSegements = List.of(reddit_uri.pathSegments);
-  newPathSegements.add("DASHPlaylist.mpd");
+  newPathSegements.add('DASHPlaylist.mpd');
   return reddit_uri.replace(pathSegments: newPathSegements);
+}
+
+Uri reddit_to_mp4(Uri reddit_uri) {
+  if (reddit_uri.path.endsWith(".mp4")) {
+    return reddit_uri;
+  } return null;
 }
