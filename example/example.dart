@@ -6,7 +6,7 @@ main() {
    * yourself, use the VideoProvider:
    */
   List<Video> potentialUris = VideoProvider.fromUri(
-    Uri.parse("https://i.imgur.com/example.gifv"),
+    Uri.parse('https://i.imgur.com/example.gifv'),
   ).getVideos();
 
   // prints https://i.imgur.com/example.mp4
@@ -17,11 +17,11 @@ main() {
    * use the CheckedVideoProvider:
    */
   Stream<Video> checkedUris = CheckedVideoProvider.fromUri(
-    Uri.parse("https://gfycat.com/ScratchyBarrenDeermouse-mobile"),
+    Uri.parse('https://gfycat.com/ScratchyBarrenDeermouse-mobile'),
   ).getVideos();
 
   /**
-   * Only prints "https://thumbs.gfycat.com/ScratchyBarrenDeermouse-mobile.mp4",
+   * Only prints 'https://thumbs.gfycat.com/ScratchyBarrenDeermouse-mobile.mp4',
    * as this particular video does not have a HighRes version
    */
   checkedUris.forEach((video) => print(video.uri));

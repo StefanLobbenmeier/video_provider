@@ -6,25 +6,25 @@ void main() {
   test('gfycat_mp4', () {
     expect(
       gfycat_to_giant_mp4(
-          Uri.parse("https://gfycat.com/ConstantDecimalKarakul")),
-      Uri.parse("https://giant.gfycat.com/ConstantDecimalKarakul.mp4"),
+          Uri.parse('https://gfycat.com/ConstantDecimalKarakul')),
+      Uri.parse('https://giant.gfycat.com/ConstantDecimalKarakul.mp4'),
     );
     expect(
       gfycat_to_thumbs_mp4(
-          Uri.parse("https://gfycat.com/ConstantDecimalKarakul")),
-      Uri.parse("https://thumbs.gfycat.com/ConstantDecimalKarakul.mp4"),
+          Uri.parse('https://gfycat.com/ConstantDecimalKarakul')),
+      Uri.parse('https://thumbs.gfycat.com/ConstantDecimalKarakul.mp4'),
     );
   });
 
   test('gfycat_mp4_api', () async {
     expect(
       await new GfycatProvider(
-              Uri.parse("https://gfycat.com/ConstantDecimalKarakul"))
+              Uri.parse('https://gfycat.com/ConstantDecimalKarakul'))
           .getApiVideo()
           .toList(),
       [
         new Video(Resolution.high, Filetype.mp4,
-            Uri.parse("https://giant.gfycat.com/ConstantDecimalKarakul.mp4"))
+            Uri.parse('https://giant.gfycat.com/ConstantDecimalKarakul.mp4'))
       ],
     );
   });
@@ -32,21 +32,21 @@ void main() {
   test('gfycat_regex', () {
     expect(
       GfycatProvider.videoNameParser
-          .firstMatch("ConstantDecimalKarakul")
+          .firstMatch('ConstantDecimalKarakul')
           .group(0),
-      "ConstantDecimalKarakul",
+      'ConstantDecimalKarakul',
     );
     expect(
       GfycatProvider.videoNameParser
-          .firstMatch("ConstantDecimalKarakul-mobile")
+          .firstMatch('ConstantDecimalKarakul-mobile')
           .group(0),
-      "ConstantDecimalKarakul",
+      'ConstantDecimalKarakul',
     );
     expect(
       GfycatProvider.videoNameParser
-          .firstMatch("constantdecimalkarakul-mobile")
+          .firstMatch('constantdecimalkarakul-mobile')
           .group(0),
-      "constantdecimalkarakul",
+      'constantdecimalkarakul',
     );
   });
 }

@@ -14,15 +14,15 @@ class ImgurProvider extends VideoProvider {
   }
 
   static bool supportsUri(Uri uri) {
-    return uri.host == "i.imgur.com" &&
-        (uri.path.endsWith("gifv") ||
-            uri.path.endsWith("gif") ||
-            uri.path.endsWith("mp4"));
+    return uri.host == 'i.imgur.com' &&
+        (uri.path.endsWith('gifv') ||
+            uri.path.endsWith('gif') ||
+            uri.path.endsWith('mp4'));
   }
 }
 
 Uri imgur_to_mp4(Uri gifv_url) {
   String newPath = gifv_url.path.replaceRange(
-      gifv_url.path.lastIndexOf("."), gifv_url.path.length, ".mp4");
+      gifv_url.path.lastIndexOf('.'), gifv_url.path.length, '.mp4');
   return gifv_url.replace(path: newPath);
 }

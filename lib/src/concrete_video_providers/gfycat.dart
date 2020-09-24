@@ -8,7 +8,7 @@ import 'package:video_provider/src/video.dart';
 
 class GfycatProvider extends ApiVideoProvider {
   static final RegExp videoNameParser =
-      new RegExp("[a-z]+", caseSensitive: false);
+      new RegExp('[a-z]+', caseSensitive: false);
 
   GfycatProvider(Uri uri) : super(uri);
 
@@ -21,16 +21,16 @@ class GfycatProvider extends ApiVideoProvider {
   }
 
   static bool supportsUri(Uri uri) {
-    return uri.host == "gfycat.com";
+    return uri.host == 'gfycat.com';
   }
 
   @override
   Stream<Video> getApiVideo() async* {
     var videoname = getVideoName();
-    var api = "https://api.gfycat.com/v1/gfycats/$videoname";
+    var api = 'https://api.gfycat.com/v1/gfycats/$videoname';
 
     var result = await http.get(api);
-    Map decodedResult = jsonDecode(result.body)["gfyItem"];
+    Map decodedResult = jsonDecode(result.body)['gfyItem'];
 
     print(result.body);
 
@@ -41,7 +41,7 @@ class GfycatProvider extends ApiVideoProvider {
     yield Video(
       Resolution.high,
       Filetype.mp4,
-      Uri.parse(decodedResult["mp4Url"]),
+      Uri.parse(decodedResult['mp4Url']),
     );
   }
 
@@ -52,14 +52,14 @@ class GfycatProvider extends ApiVideoProvider {
 
 Uri gfycat_to_giant_mp4(Uri gfycat_url) {
   return Uri.https(
-    gfycat_url.authority.replaceFirst("gfycat", "giant.gfycat"),
-    gfycat_url.path + ".mp4",
+    gfycat_url.authority.replaceFirst('gfycat', 'giant.gfycat'),
+    gfycat_url.path + '.mp4',
   );
 }
 
 Uri gfycat_to_thumbs_mp4(Uri gfycat_url) {
   return Uri.https(
-    gfycat_url.authority.replaceFirst("gfycat", "thumbs.gfycat"),
-    gfycat_url.path + ".mp4",
+    gfycat_url.authority.replaceFirst('gfycat', 'thumbs.gfycat'),
+    gfycat_url.path + '.mp4',
   );
 }
